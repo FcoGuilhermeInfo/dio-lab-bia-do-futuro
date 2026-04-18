@@ -1,6 +1,5 @@
 # Documentação do Agente
 
-Aqui está pronto em formato **README.md** pra você subir direto no GitHub:
 
 ---
 
