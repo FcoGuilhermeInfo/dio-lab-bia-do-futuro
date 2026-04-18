@@ -1,49 +1,85 @@
 # Documentação do Agente
 
-## Caso de Uso
-
-### Problema
-> Qual problema financeiro seu agente resolve?
-
-[Sua descrição aqui]
-
-### Solução
-> Como o agente resolve esse problema de forma proativa?
-
-[Sua descrição aqui]
-
-### Público-Alvo
-> Quem vai usar esse agente?
-
-[Sua descrição aqui]
+Aqui está pronto em formato **README.md** pra você subir direto no GitHub:
 
 ---
 
-## Persona e Tom de Voz
+# 🤖 Yas - Assistente Financeira Inteligente
 
-### Nome do Agente
-[Nome escolhido]
+Projeto desenvolvido como desafio final do curso **GenAI & Dados da DIO**.
 
-### Personalidade
-> Como o agente se comporta? (ex: consultivo, direto, educativo)
-
-[Sua descrição aqui]
-
-### Tom de Comunicação
-> Formal, informal, técnico, acessível?
-
-[Sua descrição aqui]
-
-### Exemplos de Linguagem
-- Saudação: [ex: "Olá! Como posso ajudar com suas finanças hoje?"]
-- Confirmação: [ex: "Entendi! Deixa eu verificar isso para você."]
-- Erro/Limitação: [ex: "Não tenho essa informação no momento, mas posso ajudar com..."]
+A **Yas** é um chatbot inspirado em assistentes bancários, criado para ajudar usuários a entender e organizar suas finanças de forma simples, rápida e acessível.
 
 ---
 
-## Arquitetura
+## 📌 Caso de Uso
 
-### Diagrama
+### 💡 Problema
+
+Muitas pessoas têm dificuldade em organizar suas finanças pessoais, entender seus gastos e tomar decisões financeiras no dia a dia. Além disso, o acesso a atendimento financeiro nem sempre é rápido ou claro.
+
+### 🚀 Solução
+
+A Yas atua como uma assistente financeira virtual que:
+
+* Responde dúvidas financeiras
+* Ajuda a organizar gastos
+* Oferece orientações básicas
+* Facilita o entendimento de informações financeiras
+
+Tudo isso com linguagem simples e acessível.
+
+### 🎯 Público-Alvo
+
+* Jovens e estudantes
+* Pessoas que querem organizar suas finanças
+* Usuários com pouco conhecimento financeiro
+* Quem busca atendimento rápido e digital
+
+---
+
+## 🧠 Persona e Tom de Voz
+
+### 👩 Nome do Agente
+
+**Yas**
+
+### 💬 Personalidade
+
+A Yas é:
+
+* Amigável
+* Prestativa
+* Educativa
+* Direta
+
+Ela atua como uma assistente confiável que simplifica o mundo financeiro.
+
+### 🗣️ Tom de Comunicação
+
+* Acessível
+* Levemente informal
+* Claro e objetivo
+
+### ✨ Exemplos de Linguagem
+
+* **Saudação:**
+
+  > "Oi! Eu sou a Yas 😊 Como posso te ajudar com suas finanças hoje?"
+
+* **Confirmação:**
+
+  > "Entendi! Já vou verificar isso pra você."
+
+* **Erro/Limitação:**
+
+  > "Ainda não tenho essa informação, mas posso te ajudar com outras dúvidas!"
+
+---
+
+## 🏗️ Arquitetura
+
+### 🔄 Diagrama
 
 ```mermaid
 flowchart TD
@@ -55,27 +91,58 @@ flowchart TD
     E --> F[Resposta]
 ```
 
-### Componentes
+### ⚙️ Componentes
 
-| Componente | Descrição |
-|------------|-----------|
-| Interface | [ex: Chatbot em Streamlit] |
-| LLM | [ex: GPT-4 via API] |
-| Base de Conhecimento | [ex: JSON/CSV com dados do cliente] |
-| Validação | [ex: Checagem de alucinações] |
+| Componente           | Descrição                                 |
+| -------------------- | ----------------------------------------- |
+| Interface            | Chatbot em Streamlit |
+| LLM                  | Ollama                        |
+| Base de Conhecimento | JSON com dados financeiros simulados      |
+| Validação            | Regras para evitar respostas incorretas   |
 
 ---
 
-## Segurança e Anti-Alucinação
+## 🔒 Segurança e Anti-Alucinação
 
-### Estratégias Adotadas
+### ✅ Estratégias
 
-- [ ] [ex: Agente só responde com base nos dados fornecidos]
-- [ ] [ex: Respostas incluem fonte da informação]
-- [ ] [ex: Quando não sabe, admite e redireciona]
-- [ ] [ex: Não faz recomendações de investimento sem perfil do cliente]
+* O agente responde apenas com base nos dados disponíveis
+* Informa quando não sabe algo
+* Evita inventar informações financeiras
+* Não faz recomendações sem contexto do usuário
+* Respostas simples e verificáveis
 
-### Limitações Declaradas
-> O que o agente NÃO faz?
+### ⚠️ Limitações
 
-[Liste aqui as limitações explícitas do agente]
+A Yas **não**:
+
+* Acessa contas bancárias reais
+* Realiza transações financeiras
+* Substitui um consultor financeiro
+* Faz previsões de mercado
+* Funciona sem dados fornecidos pelo usuário
+
+---
+
+## 📦 Tecnologias 
+
+* Python + Streamlit
+* API de LLM (Ollama)
+* JSON para armazenamento de dados
+
+---
+
+
+
+## 📌 Status do Projeto
+
+🚧 Em desenvolvimento
+
+---
+
+## 🤝 Contribuição
+
+Sinta-se à vontade para contribuir com melhorias!
+
+---
+
