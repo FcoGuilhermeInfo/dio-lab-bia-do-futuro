@@ -1,55 +1,82 @@
 # Base de Conhecimento
 
-## Dados Utilizados
-
-Descreva se usou os arquivos da pasta `data`, por exemplo:
-
-| Arquivo | Formato | Utilização no Agente |
-|---------|---------|---------------------|
-| `historico_atendimento.csv` | CSV | Contextualizar interações anteriores |
-| `perfil_investidor.json` | JSON | Personalizar recomendações |
-| `produtos_financeiros.json` | JSON | Sugerir produtos adequados ao perfil |
-| `transacoes.csv` | CSV | Analisar padrão de gastos do cliente |
-
-> [!TIP]
-> **Quer um dataset mais robusto?** Você pode utilizar datasets públicos do [Hugging Face](https://huggingface.co/datasets) relacionados a finanças, desde que sejam adequados ao contexto do desafio.
 
 ---
 
-## Adaptações nos Dados
+## 📚 Base de Conhecimento
 
-> Você modificou ou expandiu os dados mockados? Descreva aqui.
+### 📊 Dados Utilizados
 
-[Sua descrição aqui]
-
----
-
-## Estratégia de Integração
-
-### Como os dados são carregados?
-> Descreva como seu agente acessa a base de conhecimento.
-
-[ex: Os JSON/CSV são carregados no início da sessão e incluídos no contexto do prompt]
-
-### Como os dados são usados no prompt?
-> Os dados vão no system prompt? São consultados dinamicamente?
-
-[Sua descrição aqui]
+| Arquivo                  | Formato | Utilização no Agente                    |
+| ------------------------ | ------- | --------------------------------------- |
+| `transacoes.json`        | JSON    | Analisar padrão de gastos do usuário    |
+| `perfil_usuario.json`    | JSON    | Personalizar respostas e orientações    |
+| `faq_financeiro.json`    | JSON    | Responder dúvidas comuns sobre finanças |
+| `dicas_financeiras.json` | JSON    | Sugerir boas práticas financeiras       |
 
 ---
 
-## Exemplo de Contexto Montado
+### 🔧 Adaptações nos Dados
 
-> Mostre um exemplo de como os dados são formatados para o agente.
+Os dados foram simulados (mockados) para representar um cenário real de uso.
+Foram feitas as seguintes adaptações:
+
+* Criação de perfis de usuário (ex: iniciante, intermediário)
+* Simulação de transações financeiras (gastos com alimentação, lazer, contas, etc.)
+* Organização dos dados em JSON para facilitar a leitura pelo sistema
+* Simplificação das informações para manter respostas rápidas e objetivas
+
+---
+
+## 🔗 Estratégia de Integração
+
+### 📥 Como os dados são carregados?
+
+Os arquivos JSON são carregados no início da execução do sistema.
+Eles são lidos e armazenados em memória para acesso rápido durante a conversa.
+
+Exemplo:
+
+```python
+import json
+
+with open('data/transacoes.json') as f:
+    transacoes = json.load(f)
+```
+
+---
+
+### 🧠 Como os dados são usados no prompt?
+
+Os dados são inseridos dinamicamente no contexto do prompt enviado ao modelo.
+
+* Informações do usuário → incluídas no contexto
+* Transações → resumidas antes de enviar
+* Dicas e FAQs → usadas conforme a intenção da pergunta
+
+A Yas utiliza esses dados para gerar respostas mais personalizadas e evitar respostas genéricas.
+
+---
+
+## 🧾 Exemplo de Contexto Montado
 
 ```
 Dados do Cliente:
 - Nome: João Silva
-- Perfil: Moderado
-- Saldo disponível: R$ 5.000
+- Perfil: Iniciante
+- Saldo disponível: R$ 1.200
 
 Últimas transações:
-- 01/11: Supermercado - R$ 450
-- 03/11: Streaming - R$ 55
-...
+- 10/04: Supermercado - R$ 320
+- 12/04: Uber - R$ 45
+- 15/04: Streaming - R$ 39,90
+
+Comportamento identificado:
+- Alto gasto com alimentação
+- Frequência moderada de transporte
 ```
+
+---
+
+
+
